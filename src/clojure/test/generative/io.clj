@@ -91,6 +91,6 @@
 
 
 ;;; ADDED
-(defn- print-stack-trace [^Exception e]
+(defn print-stack-trace [^Exception e]
   (binding [*out* *err*] 
     (pr (.StackTrace e))))
