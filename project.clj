@@ -1,9 +1,14 @@
-(defproject clojure.tools.nrepl "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+(defproject org.clojars.dmiller2718/cljclr.test.generative "0.1.0-SNAPSHOT"
+  :description "Port of clojure.org/test.generative to ClojureCLR"
+  :url "https://github.com/dmiller/cljclr.test.generative"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies []
+  :dependencies [[date-clj "1.0.1"]
+                 [org.clojars.dmiller2718/cljclr.tools.namespace "0.1.0"]
+                 [org.clojars.dmiller2718/cljclr.data.generators "0.1.0"]]
+    :deploy-repositories [["clojars" {:url "https://clojars.org/repo/"
+                                    :sign-releases  false}]]
+  ;:source-paths [".lein-git-deps/cljclr.tools.namespace/src/"]
   :min-lein-version "2.0.0"
   :plugins [[lein-clr "0.2.0"]]
   :clr {:cmd-templates  {:clj-exe   [#_"mono" [CLJCLR15_40 %1]]
