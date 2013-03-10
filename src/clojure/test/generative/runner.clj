@@ -204,7 +204,7 @@
 
 (defn find-vars-in-dirs
   [& dirs]
-  (let [nses (mapcat #(ns/find-namespaces-in-dir (System.IO.FileInfo. ^String %)) dirs)]        ;;; java.io.File.
+  (let [nses (mapcat #(ns/find-namespaces-in-dir (System.IO.DirectoryInfo. ^String %)) dirs)]        ;;; java.io.File.
     (doseq [ns nses] (require ns))
     (apply find-vars-in-namespaces nses)))
 
@@ -297,7 +297,7 @@
   "Runs tests in dirs, returning a map of test lib keyword
    to summary data"
   [& dirs]
-  (let [nses (mapcat #(ns/find-namespaces-in-dir (System.IO.FileInfo. ^String %)) dirs)          ;;; java.io.File.
+  (let [nses (mapcat #(ns/find-namespaces-in-dir (System.IO.DirectoryInfo. ^String %)) dirs)          ;;; java.io.File.
         conf (config/config)]
     (doseq [ns nses] (require ns))
     (event/install-default-handlers)
