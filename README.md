@@ -16,7 +16,10 @@ Leiningen/Clojars reference:
 
    [org.clojure.clr/test.generative "0.1.4"]
    
-   
+## Notes on the ported code ##
+
+I have not yet ported clojure.test.generative.logback due to its reliance on very JVM-specific logging libraries.
+
    
 # Copyright and License #
 
