@@ -13,5 +13,9 @@
     <releaseNotes>First version packaged for NuGet.</releaseNotes>
     <copyright>Copyright David Miller 2013</copyright>
     <tags>Clojure ClojureCLR</tags>
+	<dependencies>
+	  <dependency id="clojure.tools.namespace" />
+	  <dependency id="clojure.data.generators" />
+	</dependencies>
   </metadata>
 </package>
