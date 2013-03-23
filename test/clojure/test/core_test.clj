@@ -76,7 +76,7 @@
     (when-not (contains? case-map k)
       (assert= (% k) default k))))
 
-(defspec cond-spec
+#_(defspec cond-spec
   map->cond-fn
   [^{:tag (hash-map `case-test-constant long)} cond-map
    ^keyword default]
@@ -96,7 +96,7 @@
      obj)
     (frequencies @encountered)))
 
-(defspec pre-and-post-walk-hit-same-things
+#_(defspec pre-and-post-walk-hit-same-things
   identity
   [^anything _]
   (assert= (encountered-in-walk prewalk %)
