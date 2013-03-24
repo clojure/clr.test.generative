@@ -319,6 +319,7 @@
            (println "\n*** Some tests failed ***\n")))
        (Environment/Exit (if failed? 1 0)))                               ;;; System/exit
      (catch Exception t                                                   ;;; Throwable
+	   (prn (str "Exception: " (.Message t)))
        (io/print-stack-trace t)                                           ;;; (.printStackTrace t)
        (Environment/Exit -1))                                             ;;; System/exit
      (finally
@@ -333,4 +334,26 @@
         di (.Directory fi)]
 	(.Create di)))
 
+;;; ADDED
 
+(defn -main-no-exit
+  "Command line entry point, runs all tests in dirs using clojure.test and
+   test.generative. Calls System.exit!"
+  [& dirs]
+  (if (seq dirs)
+    (try
+     (let [results (apply test-dirs dirs)
+           failed? (boolean (some failed? (vals results)))]
+       (doseq [[k v] results]
+         (println (str "\nFramework " k))
+         (println v))
+       (when failed?
+         (binding [*out* *err*]
+           (println "\n*** Some tests failed ***\n"))))
+     (catch Exception t                                                   ;;; Throwable
+	   (prn (str "Exception: " (.Message t)))
+       (io/print-stack-trace t))
+     (finally
+      (shutdown-agents)))
+    (do
+      (println "Specify at least one directory with tests"))))
