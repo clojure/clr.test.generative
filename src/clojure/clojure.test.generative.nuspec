@@ -11,11 +11,11 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>First version packaged for NuGet.</releaseNotes>
-    <copyright>Copyright David Miller 2013</copyright>
+    <copyright>Copyright David Miller 2014</copyright>
     <tags>Clojure ClojureCLR</tags>
 	<dependencies>
-	  <dependency id="clojure.tools.namespace" />
-	  <dependency id="clojure.data.generators" />
+	  <dependency id="clojure.tools.namespace" version="0.2.7"/>
+	  <dependency id="clojure.data.generators" version="0.1.0"/>
 	</dependencies>
   </metadata>
 </package>
