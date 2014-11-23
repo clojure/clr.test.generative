@@ -9,7 +9,7 @@
 ;; generation is repeatable
 (repeatedly
  2 
- #(binding [gen/*rnd* (java.util.Random. 42)]
+ #(binding [gen/*rnd* (System.Random. 42)]   ;;; java.util.Random.
    (gen/short)))
 
 ;; generation is composable
@@ -25,7 +25,7 @@
 (defspec longs-are-closed-under-increment
   inc ;; function under test
   [^long l]  ;; indicates generation via gen/long
-  (assert (instance? Long %)))
+  (assert (instance? System.Int64 %)))                 ;;; Long
 
 ;; specs are functions
 (longs-are-closed-under-increment 4)
@@ -37,19 +37,19 @@
 
 (first tests)
 
-;; run test with some generated inputs
-(runner/run-one
+;; run test with some generated inputs   ----- no longer public and args have changed
+#_(runner/run-one
  (first tests)
  1000
  [42])
 
-(runner/run-n
+#_(runner/run-n
  2
  1000
  tests)
 
 ;; repl-friendly use
-(runner/run-vars
+#_(runner/run-vars                               ;;; no longer exists
  2 1000 #'longs-are-closed-under-increment)
 
 ;; peek at what defspec tells us
@@ -62,12 +62,12 @@
   (assert (< % 20)))
 
 ;; run as from REPL
-(runner/run-vars
+#_(runner/run-vars                                     ;;; args have changed
  2 1000 #'collections-are-small)
 (ex-data *e)
 
 ;; run as from suite
-(runner/run-suite {:threads 1 :msec 500} (runner/get-tests #'collections-are-small))
+(runner/run-suite {:nthreads 1 :msec 500} (runner/get-tests #'collections-are-small))   ;;; :threads
 
 
 
