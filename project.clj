@@ -3,7 +3,7 @@
   :url "https://github.com/clojure/clr.test.generative"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure.clr/tools.namespace "0.2.7"]
+  :dependencies [[org.clojure.clr/tools.namespace "0.2.10"]
                  [org.clojure.clr/data.generators "0.1.0"]]
     :deploy-repositories [["clojars" {:url "https://clojars.org/repo/"
                                     :sign-releases  false}]]
