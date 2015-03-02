@@ -9,9 +9,8 @@
 ;;; Modified for ClojureCLR by David Miller.
 (ns clojure.test.generative.runner
   (:require
-   [clojure.pprint :as pprint] [clojure.test.generative.clr :as clr]  ;;; added clr
    [clojure.tools.namespace.find :as ns]              ;;; was just clojure.tools.namespace
-   [clojure.data.generators :as gen]
+   [clojure.data.generators :as gen] [clojure.test.generative.clr :as clr]  ;;; added clr
    [clojure.test.generative :as tgen]))
    
 (set! *warn-on-reflection* true)
@@ -26,7 +25,8 @@
        read-string
        10000]])
 
-(defn- config
+(defn config
+  "Returns runner configuration derived from system properties."
   []
   (reduce
    (fn [m [prop path coerce default]]
@@ -123,10 +123,34 @@
                      :seeds (repeatedly nthreads next-seed)})
           tests))
 
-(defn- prf
+(def ^:private serializer (agent nil))
+
+(defn serialized
+  "Returns a function that calls f for side effects, async,
+   serialized by an agent"
+  ([f] (serialized f serializer))
+  ([f agt]
+     (fn [& args]
+       (send-off agt
+                 (fn [_]
+                   (try
+                    (apply f args)
+                    (catch Exception t                  ;;; Throwable
+                      (clr/print-stack-trace t)))      ;;; .printStackTrace
+                   nil))
+       nil)))
+
+(def prf
   "Print and flush."
-  [s]
-  (print s) (flush))
+  (serialized (fn [s]
+                (binding [*out* *err*]
+                  (print s)
+                  (flush)))))
+
+(def print-stack-trace
+  (serialized (fn [^Exception t] (clr/print-stack-trace t))))         ;;; Throwable  .printStackTrace
+
+(def sprn (serialized prn))
 
 (defn dir-tests
   "Returns all tests in dirs"
@@ -161,9 +185,9 @@
         ret (reduce
              (fn [{:keys [failures iters nresults]} result]
                (when (:exception result)
-                 (clr/print-stack-trace (:exception result)))             ;;; .printStackTrace ^Throwable
+                 (print-stack-trace (:exception result)))
                (if (:exception result)
-                 (prn result)
+                 (sprn result)
                  (progress))
                {:failures (+ failures (if (:exception result) 1 0))
                 :iters (+ iters (:iter result))

@@ -66,7 +66,7 @@
               gen/scalar
               gen/keyword))
 
-(defspec case-spec
+#_(defspec case-spec
   map->case-fn
   [^{:tag (hash-map `case-test-constant long)} case-map
    ^keyword default]
