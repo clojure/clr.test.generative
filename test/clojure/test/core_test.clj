@@ -31,14 +31,21 @@
   []
   @failed-diff-ref)
 
+(def ^:private last-case-ref (atom nil))
+
 (defn map->case-src
   "Returns source for a case statement that works like map m,
    with default for missing elements."
   [m default]
+  (let [code
   `(fn [input#]
      (case input#
            ~@(mapcat identity m)
-           ~default)))
+           ~default))
+		   ]
+		   (reset! last-case-ref code)
+		   code
+		   ))
 
 (defn map->case-fn
   "Create a case statement that works the same as map m,
