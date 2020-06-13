@@ -14,7 +14,7 @@ Nuget reference:
 
 Leiningen/Clojars reference:
 
-   [org.clojure.clr/test.generative "0.5.2"]
+   [org.clojure.clr/test.generative "1.0.0"]
    
 ## Notes on the ported code ##
 
