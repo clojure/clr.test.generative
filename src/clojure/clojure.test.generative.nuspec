@@ -4,18 +4,18 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
-    <licenseUrl>http://opensource.org/licenses/eclipse-1.0.php</licenseUrl>
+    <authors>$authors$</authors>
+    <owners>$authors$</owners>
+    <license type="expression">EPL-1.0</license>
     <projectUrl>https://github.com/clojure/clr.test.generative</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>First version packaged for NuGet.</releaseNotes>
-    <copyright>Copyright David Miller 2014</copyright>
+    <releaseNotes>Updated to SDK-style.</releaseNotes>
+    <copyright>$copyright$</copyright>
     <tags>Clojure ClojureCLR</tags>
 	<dependencies>
-	  <dependency id="clojure.tools.namespace" version="0.2.7"/>
-	  <dependency id="clojure.data.generators" version="0.1.0"/>
+	  <dependency id="clojure.tools.namespace" version="1.0.0"/>
+	  <dependency id="clojure.data.generators" version="1.0.0"/>
 	</dependencies>
   </metadata>
 </package>
