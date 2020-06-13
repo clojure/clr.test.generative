@@ -1,9 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net35</TargetFramework>
+    <TargetFrameworks>net461;netstandard2.1</TargetFrameworks>
     <OutputType>Library</OutputType>
     <RootNamespace>clojure</RootNamespace>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>clojure.test.generative</Title>
+    <Product>clojure.test.generative</Product>
+    <AssemblyTitle>clojure.test.generative</AssemblyTitle>
+    <Description>Test data generation and execution harness.</Description>
+    <Copyright>Copyright © Rich Hickey, David Miller 2020</Copyright>
+    <Company>ClojureCLR contributors</Company>
+    <Version>1.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="test\generative.clj" />
@@ -11,5 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="test\generative\clr.clj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 </Project>
