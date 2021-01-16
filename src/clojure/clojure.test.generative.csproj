@@ -12,7 +12,7 @@
     <Description>Test data generation and execution harness.</Description>
     <Copyright>Copyright © Rich Hickey, David Miller 2020</Copyright>
     <Company>ClojureCLR contributors</Company>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="test\generative.clj" />
@@ -23,5 +23,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="clojure.data.generators" Version="1.0.1" />
+    <PackageReference Include="clojure.tools.namespace" Version="1.1.0" />
   </ItemGroup>
 </Project>

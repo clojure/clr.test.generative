@@ -1,4 +1,4 @@
-(defproject org.clojure.clr/test.generative "1.0.0"
+(defproject org.clojure.clr/test.generative "1.0.1"
   :description "Port of clojure.org/test.generative to ClojureCLR"
   :url "https://github.com/clojure/clr.test.generative"
   :license {:name "Eclipse Public License"
