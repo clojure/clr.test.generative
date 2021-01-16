@@ -1,10 +1,10 @@
-(defproject org.clojure.clr/test.generative "1.0.1"
+(defproject org.clojure.clr/test.generative "1.0.1.1"
   :description "Port of clojure.org/test.generative to ClojureCLR"
   :url "https://github.com/clojure/clr.test.generative"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure.clr/tools.namespace "1.1.0"]
-                 [org.clojure.clr/data.generators "1.0.0"]]
+  :dependencies [[org.clojure.clr/tools.namespace "1.1.0.1"]
+                 [org.clojure.clr/data.generators "1.0.1.1"]]
     :deploy-repositories [["clojars" {:url "https://clojars.org/repo/"
                                     :sign-releases  false}]]
   ;:source-paths [".lein-git-deps/cljclr.tools.namespace/src/"]
