@@ -1,9 +1,11 @@
-(defproject org.clojure.clr/test.generative "1.0.1.1"
+(defproject org.clojure.clr/test.generative "1.0.2"
   :description "Port of clojure.org/test.generative to ClojureCLR"
   :url "https://github.com/clojure/clr.test.generative"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure.clr/tools.namespace "1.1.0.1"]
+  :source-paths ["src/main/clojure"]
+  :test-paths ["src/test/clojure"]   			
+  :dependencies [[org.clojure.clr/tools.namespace "1.4.4"]
                  [org.clojure.clr/data.generators "1.0.1.1"]]
     :deploy-repositories [["clojars" {:url "https://clojars.org/repo/"
                                     :sign-releases  false}]]

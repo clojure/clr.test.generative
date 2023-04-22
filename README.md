@@ -10,11 +10,11 @@ From the parent's README:
 
 Nuget reference:
 
-    PM> Install-Package clojure.test.generative
+    PM> Install-Package clojure.test.generative -Version 1.0.2
 
 Leiningen/Clojars reference:
 
-   [org.clojure.clr/test.generative "1.0.1.1"]
+   [org.clojure.clr/test.generative "1.0.2"]
    
 ## Notes on the ported code ##
 
