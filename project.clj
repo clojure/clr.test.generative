@@ -5,8 +5,8 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src/main/clojure"]
   :test-paths ["src/test/clojure"]   			
-  :dependencies [[org.clojure.clr/tools.namespace "1.4.4"]
-                 [org.clojure.clr/data.generators "1.0.1.1"]]
+  :dependencies [[org.clojure.clr/tools.namespace "1.5.2"]
+                 [org.clojure.clr/data.generators "1.1.0"]]
     :deploy-repositories [["clojars" {:url "https://clojars.org/repo/"
                                     :sign-releases  false}]]
   ;:source-paths [".lein-git-deps/cljclr.tools.namespace/src/"]
