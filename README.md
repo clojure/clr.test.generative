@@ -1,4 +1,4 @@
-# cljclr.test.generative #
+# clr.test.generative #
 
 A port of [clojure/test.generative](https://github.com/clojure/test.generative) library to ClojureCLR.
 
@@ -8,13 +8,23 @@ From the parent's README:
 
 # Releases
 
+
+Latest stable release: 1.1.0
+
+[CLI/`deps.edn`](https://clojure.org/reference/deps_edn) dependency information:
+```clojure
+io.github.clojure/clr.test.generative {:git/tag "v1.1.0" :git/sha "f86df28"}
+```
+
+
+
 Nuget reference:
 
-    PM> Install-Package clojure.test.generative -Version 1.0.2
+    PM> Install-Package clojure.test.generative -Version 1.1.0
 
 Leiningen/Clojars reference:
 
-   [org.clojure.clr/test.generative "1.0.2"]
+   [org.clojure.clr/test.generative "1.1.0"]
    
 ## Notes on the ported code ##
 
