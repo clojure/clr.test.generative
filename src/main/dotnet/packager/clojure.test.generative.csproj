@@ -12,12 +12,12 @@
 		<AssemblyTitle>clojure.test.generative</AssemblyTitle>
 		<Authors>ClojureCLR contributors</Authors>
 		<Description>Test data generation and execution harness.</Description>
-		<Copyright>Copyright © Rich Hickey, ClojureCLR contributors 2023</Copyright>
+		<Copyright>Copyright © Rich Hickey, ClojureCLR contributors 2024</Copyright>
 		<PackageLicenseExpression>EPL-1.0</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/clojure/clr.tools.namesapce</RepositoryUrl>
 		<Company>ClojureCLR contributors</Company>
 		<PackageTags>Clojure;ClojureCLR</PackageTags>
-		<Version>1.0.2</Version>
+		<Version>1.1.0</Version>
 	</PropertyGroup>	
 	
 	<ItemGroup>
@@ -25,8 +25,8 @@
 	</ItemGroup>	
 	
 	<ItemGroup>
-	  <PackageReference Include="clojure.data.generators" Version="1.0.1.1" />
-	  <PackageReference Include="clojure.tools.namespace" Version="1.4.4" />
+	  <PackageReference Include="clojure.data.generators" Version="1.1.0" />
+	  <PackageReference Include="clojure.tools.namespace" Version="1.5.2" />
 	</ItemGroup>	
 
 	
