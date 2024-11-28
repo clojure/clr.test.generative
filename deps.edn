@@ -1,6 +1,7 @@
 {:paths ["src/main/clojure"]
  :deps
- {io.github.clojure/clr.data.generators {:git/tag "v1.1.0" :git/sha "d25d292"}}
+   {io.github.clojure/clr.data.generators {:git/tag "v1.1.0" :git/sha "d25d292"}
+    io.github.clojure/clr.tools.namespace {:git/tag "v1.5.3" :git/sha "ca0f5dc"}}
 
  :aliases
  {:test

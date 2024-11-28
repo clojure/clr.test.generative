@@ -9,22 +9,22 @@ From the parent's README:
 # Releases
 
 
-Latest stable release: 1.1.0
+Latest stable release: 1.1.1
 
 [CLI/`deps.edn`](https://clojure.org/reference/deps_edn) dependency information:
 ```clojure
-io.github.clojure/clr.test.generative {:git/tag "v1.1.0" :git/sha "f86df28"}
+io.github.clojure/clr.test.generative {:git/tag "v1.1.1" :git/sha "f86df28"}
 ```
 
 
 
 Nuget reference:
 
-    PM> Install-Package clojure.test.generative -Version 1.1.0
+    PM> Install-Package clojure.test.generative -Version 1.1.1
 
 Leiningen/Clojars reference:
 
-   [org.clojure.clr/test.generative "1.1.0"]
+   [org.clojure.clr/test.generative "1.1.1"]
    
 ## Notes on the ported code ##
 
