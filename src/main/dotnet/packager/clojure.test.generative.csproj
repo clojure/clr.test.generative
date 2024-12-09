@@ -17,7 +17,7 @@
 		<RepositoryUrl>https://github.com/clojure/clr.tools.namesapce</RepositoryUrl>
 		<Company>ClojureCLR contributors</Company>
 		<PackageTags>Clojure;ClojureCLR</PackageTags>
-		<Version>1.1.0</Version>
+		<Version>1.1.1</Version>
 	</PropertyGroup>	
 	
 	<ItemGroup>
@@ -26,7 +26,7 @@
 	
 	<ItemGroup>
 	  <PackageReference Include="clojure.data.generators" Version="1.1.0" />
-	  <PackageReference Include="clojure.tools.namespace" Version="1.5.2" />
+	  <PackageReference Include="clojure.tools.namespace" Version="1.5.4" />
 	</ItemGroup>	
 
 	
